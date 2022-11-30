@@ -1,12 +1,11 @@
 import React from "react";
-import Header from "./components/Header";
-import { WeatherProvider } from "./context/weatherContext";
+import Weather from "./context/Weather";
 
 function App() {
   return (
-    <WeatherProvider>
-      <Header />
-    </WeatherProvider>
+    <div className="bg-blue-400 min-h-screen">
+      <Weather />
+    </div>
   );
 }
 
