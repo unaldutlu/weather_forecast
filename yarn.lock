@@ -8620,6 +8620,11 @@ url-parse@^1.5.3:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
+use-turkey-cities@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/use-turkey-cities/-/use-turkey-cities-0.1.1.tgz#a02814b72e749fc1ce572f587eec8b46ca1497e7"
+  integrity sha512-19EiY/eZqb/60wXwRrBjT7OpUi3irv2Z9afwblirakbKcj3Gu2PPNZH/Dw0/gIGvM4KYi+rd2as8nhBIM7BATg==
+
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
