@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import WeatherContext from "../context/WeatherContext";
+import React from "react";
 
 function Header() {
-  const data = useContext(WeatherContext);
-  console.log(data);
-
   return (
     <div>
       <h1 className='uppercase font-extrabold text-xl sm:text-2xl lg:text-3xl text-red-700 text-center pt-[12%]'>

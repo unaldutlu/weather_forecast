@@ -1,14 +1,19 @@
-import React from "react";
+import { useContext } from "react";
+import WeatherContext from "../context/WeatherContext";
 import useTurkeyCities from "use-turkey-cities";
 
 function Location() {
-  const { cities, city, setCity} =
-    useTurkeyCities();
+  const { cities, city, setCity } = useTurkeyCities();
+  const {setLocation } = useContext(WeatherContext);
+
+  const handleClick = () => {
+    setLocation(city);
+  };
 
   return (
-    <div className="">
+    <div className=''>
       <form
-      className="flex justify-start items-center"
+        className='flex justify-start items-center'
         onSubmit={(e) => {
           e.preventDefault();
           console.log(city);
@@ -29,7 +34,13 @@ function Location() {
         </select>
         <br />
         <br />
-        <button type='submit' className="bg-orange-500 text-white border-none  px-4 rounded-lg hover:bg-red-600 h-7">Submit</button>
+        <button
+          type='submit'
+          className='bg-orange-500 text-white border-none  px-4 rounded-lg hover:bg-red-600 h-7'
+          onClick={handleClick}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
