@@ -4,7 +4,7 @@ import useTurkeyCities from "use-turkey-cities";
 
 function Location() {
   const { cities, city, setCity } = useTurkeyCities();
-  const {setLocation } = useContext(WeatherContext);
+  const { setLocation } = useContext(WeatherContext);
 
   const handleClick = () => {
     setLocation(city);
@@ -16,7 +16,7 @@ function Location() {
         className='flex justify-start items-center'
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(city);
+          setCity(city);
         }}
       >
         <select

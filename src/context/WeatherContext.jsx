@@ -7,17 +7,17 @@ export function WeatherProvider({ children }) {
   const [location, setLocation] = useState("Ankara");
 
   useEffect(() => {
-    const getWeather = async () => {
+    const getWeatherData = async () => {
       try {
         const data = await axios(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=7&appid=e813d7a57f8e6eaf1c8c534da4ec575a&units=metric&lang=tr`
+          `https://api.openweathermap.org/data/2.5/forecast/daily?q=${location}&cnt=7&appid=e813d7a57f8e6eaf1c8c534da4ec575a&units=metric&lang=tr`
         );
         setWeather(data.data);
       } catch (error) {
         console.log(error);
       }
     };
-    getWeather();
+    getWeatherData();
   }, [location]);
   const values = {
     weather,
@@ -25,8 +25,6 @@ export function WeatherProvider({ children }) {
     location,
     setLocation,
   };
-
-  console.log(weather);
 
   return (
     <WeatherContext.Provider value={values}>{children}</WeatherContext.Provider>
