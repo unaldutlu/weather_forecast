@@ -3,3 +3,11 @@
 @tailwind utilities;
 
 @layer components {}
+
+.image {
+    background-image: url(./assets/weather.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter: drop-shadow(16px 16px 20px red) contrast(100%);
+}
