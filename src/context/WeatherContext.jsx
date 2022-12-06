@@ -4,13 +4,13 @@ const WeatherContext = createContext();
 
 export function WeatherProvider({ children }) {
   const [weather, setWeather] = useState();
-  const [location, setLocation] = useState({ lat: 39.57, lon: 32.53 });
+  const [location, setLocation] = useState("Ankara");
 
   useEffect(() => {
     const getWeatherData = async () => {
       try {
         const data = await axios(
-          `api.openweathermap.org/data/2.5/forecast/daily?lat=${location.lat}&lon={location.lon}&cnt=7&appid=e813d7a57f8e6eaf1c8c534da4ec575a`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=e813d7a57f8e6eaf1c8c534da4ec575a&units=metric&lang=tr`
         );
         setWeather(data.data);
       } catch (error) {
