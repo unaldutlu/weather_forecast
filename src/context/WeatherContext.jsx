@@ -10,7 +10,7 @@ export function WeatherProvider({ children }) {
     const getWeatherData = async () => {
       try {
         const data = await axios(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=e813d7a57f8e6eaf1c8c534da4ec575a&units=metric&lang=tr`
+          `https://api.weatherbit.io/v2.0/forecast/daily?city=${`${location},tr`}&key=7dd8a708d1d348fdacf9bebe21501746`
         );
         setWeather(data.data);
       } catch (error) {
@@ -19,13 +19,14 @@ export function WeatherProvider({ children }) {
     };
     getWeatherData();
   }, [location]);
+
   const values = {
     weather,
     setWeather,
     location,
     setLocation,
   };
-  console.log(weather);
+  // console.log(weather);
 
   return (
     <WeatherContext.Provider value={values}>{children}</WeatherContext.Provider>
