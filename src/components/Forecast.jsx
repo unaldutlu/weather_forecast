@@ -4,6 +4,8 @@ import WeatherContext from "../context/WeatherContext";
 function Forecast() {
   const { weather, location } = useContext(WeatherContext);
 
+
+
   return (
     <>
       <div className='flex justify-center'>
@@ -11,28 +13,27 @@ function Forecast() {
           {location}
         </div>
       </div>
-      <div className='bg-slate-200 p-4 m-4 mt-0 flex flex-wrap justify-evenly items-center rounded-xl gap-3 w-[47rem] h-40 overflow-y-scroll'>
-        {weather && console.log(weather.list)}
+      <div className='bg-slate-200 p-4 m-4 mt-0 flex flex-wrap justify-evenly items-center rounded-xl gap-3 lg:w-[57rem] lg:h-40'>
         {weather &&
-          weather.list.map((el, i) => (
+          weather.data.slice(0,7).map((el, i) => (
             <div key={i} className='w-28 h-36'>
               <div className='h-9 flex justify-center items-center font-bold'>
-                {new Date(el.dt * 1000).toUTCString().split(",")[0]}
+                {new Date(el.datetime).toDateString().split(" ")[0]}
               </div>
               <div className='bg-slate-300 rounded-full h-20 flex justify-center items-center'>
                 <img
-                  src={`http://openweathermap.org/img/wn/${weather.list[10].weather[0].icon}.png`}
+                  src={`https://www.weatherbit.io/static/img/icons/${el.weather.icon}.png`}
                   alt=''
                   className='w-20'
                 />
               </div>
               <div className='flex justify-around items-center font-bold'>
                 <div className='text-blue-500'>
-                  {weather.list[0].main.temp_min}
+                  {weather.data[i].min_temp}
                   <sup>°C</sup>
                 </div>
                 <div className='text-blue-700'>
-                  {weather.list[0].main.temp_max}
+                  {weather.data[i].max_temp}
                   <sup>°C</sup>
                 </div>
               </div>
