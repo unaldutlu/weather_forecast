@@ -5,7 +5,7 @@ import { HiOutlineMail } from "react-icons/hi";
 function Footer() {
   return (
     <div className='flex justify-center items-center'>
-      <div className='text-white mb-20 w-72 h-16 flex justify-around items-center border-x-2 border-b-2 rounded-b-lg bg-blue-800'>
+      <div className='text-white mb-20 w-60 sm:w-72 h-16 flex justify-around items-center border-x-2 border-b-2 rounded-b-lg bg-blue-800'>
         <a
           href='https://www.linkedin.com/in/unaldutlu/'
           className='rounded-3xl bg-red-700 hover:bg-red-800 p-2'
