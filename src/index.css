@@ -9,5 +9,31 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    filter: drop-shadow(16px 16px 20px red) contrast(100%);
+}
+
+.show:hover {
+    -webkit-box-shadow: 0 0 4px 6px black;
+    -moz-box-shadow: 0 0 4px 6px black;
+    box-shadow: 0 0 2px 3px black;
+    border-radius: 10px !important;
+}
+
+@media screen and (min-width:768px) {
+    .panel {
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        padding: 0.5rem;
+        backdrop-filter: blur(80px);
+        margin: 5rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.tranfrm:hover {
+    transform: scale(1.15);
+    transition: transform 0.5s;
+    cursor: pointer;
 }
