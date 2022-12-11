@@ -13,14 +13,14 @@ function Location() {
   return (
     <div className=''>
       <form
-        className='flex justify-start items-center'
+        className='flex justify-center md:justify-start items-center mb-10 lg:mb-0'
         onSubmit={(e) => {
           e.preventDefault();
           setCity(city);
         }}
       >
         <select
-          className='w-40 h-7 rounded-xl mx-4 outline-none font-bold px-2'
+          className='w-40 h-7 rounded-lg mx-4 outline-none font-bold px-2 show'
           onChange={(e) => {
             setCity(e.target.value);
           }}
@@ -36,7 +36,7 @@ function Location() {
         <br />
         <button
           type='submit'
-          className='bg-orange-500 text-white border-none  px-4 rounded-lg hover:bg-red-600 h-7'
+          className='bg-blue-700 text-white border-none  px-4 mr-4 rounded-lg hover:bg-blue-600 h-7 show'
           onClick={handleClick}
         >
           Submit
